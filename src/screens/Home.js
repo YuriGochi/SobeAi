@@ -12,12 +12,12 @@ import {
 
 const image = { uri: "https://pbs.twimg.com/media/D-Z5oJVW4AEwa8d.jpg" };
 
-const Home = () => (
+const Home = ({ navigation }) => (
   <View style={styles.container}>
     <ImageBackground source={image} resizeMode="cover" style={styles.image}>
       <Text style={styles.textHeader}>Sobe Aí!</Text>
       <View style={styles.footer}>
-        <TouchableOpacity style={styles.Novo} >
+        <TouchableOpacity style={styles.Novo} onPress={() => navigation.navigate('Intro')}>
             <Text style={{
                 color: '#cba826', 
                 alignItems: 'center',

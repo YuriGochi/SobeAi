@@ -1,13 +1,16 @@
 import React from "react";
-import { SliderBox } from "react-native-image-slider-box";
 import { 
     Text, 
 } from "react-native";
 
 const Intro = () => (
-<Text>Teste</Text>
+    <Text style=
+    {{
+        color: '#cba826', 
+        width: '400%',
+        alignItems: 'center',
+        marginLeft: 25
+    }} >Testeee</Text>
 );
-const styles = StyleSheet.create({
 
-})
 export default Intro;
