@@ -5,10 +5,9 @@ import {
   StyleSheet, 
   Text, 
   View,
-  Button,
-  TouchableOpacity,
-  Footer
  } from "react-native";
+import Button from '../components/Button';
+import { theme } from '../core/theme'
 
 const image = { uri: "https://pbs.twimg.com/media/D-Z5oJVW4AEwa8d.jpg" };
 
@@ -16,22 +15,14 @@ const Home = ({ navigation }) => (
   <View style={styles.container}>
     <ImageBackground source={image} resizeMode="cover" style={styles.image}>
       <Text style={styles.textHeader}>Sobe Aí!</Text>
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.Novo} onPress={() => navigation.navigate('Intro')}>
-            <Text style={{
-                color: '#cba826', 
-                alignItems: 'center',
-                marginLeft: 25
-                }} >Novo por aqui?</Text>
-          </TouchableOpacity>
-        <TouchableOpacity style={styles.Membro} >
-            <Text style={{
-                color: '#cba826', 
-                alignItems: 'center',
-                marginLeft: 25
-                }} >Já sou membro</Text>
-        </TouchableOpacity>
-      </View>
+        <View style={styles.footer}>
+          <Button style={styles.button} mode="contained" onPress={() => navigation.navigate('Intro')}>
+              <Text>Novo por aqui?</Text>
+          </Button>
+          <Button style={styles.button}  mode="outlined" onPress={() => navigation.navigate('LoginScreen')}>
+              <Text>Já sou membro</Text>
+          </Button>
+        </View>
     </ImageBackground>
   </View>
 );
@@ -52,28 +43,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     backgroundColor: "#000000c0"
   },
-  Novo: {
-    alignItems: "center",
-    backgroundColor: "#000000c0",
-    width: "40%",
-    height: 50,
-    borderRadius: 34,
-    flexDirection: 'row',
-    marginBottom: 50,
+  button:{
+    width:'40%',
   },
-  Membro: {
-    alignItems: "center",
-    backgroundColor: "#000000c0",
-    width: "40%",
-    height: 50,
-    borderRadius: 34,
-    flexDirection: 'row',
-    marginBottom: 50,
-  },
-
   footer: {
     flexDirection: 'row',
-    justifyContent: "space-evenly"
+    justifyContent: 'space-evenly'
   }
 });
 
